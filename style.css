@@ -5,12 +5,15 @@
 html,
 body {
   margin: 0;
+}
+
+body {
   font-family: Roboto, sans-serif;
 }
 
 .container {
-  height: 100vh;
-  width: max(100vw, 100%);
+  min-height: 100vh;
+  min-width: 100vw;
   display: grid;
   grid-template-columns: [sidebar-start] 1fr [sidebar-end header-start main-start] 4fr [header-end main-end];
   grid-template-rows: [sidebar-start header-start] 1fr [header-end main-start] 5fr [sidebar-end main-end];
