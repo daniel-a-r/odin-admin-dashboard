@@ -26,17 +26,15 @@ body {
   padding: 1rem;
   background-color: #1992d4;
   grid-area: sidebar;
-  
-}
-
-.sidebar-flex {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
   gap: 2rem;
-  & .sidebar-icon {
+
+  .sidebar-icon {
     fill: #fff;
   }
-  & span {
+
+  span {
     color: #fff;
   }
 }
@@ -45,10 +43,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
   > span {
     font-size: 1.75rem;
     font-weight: 600;
   }
+
   > svg {
     height: 3rem;
   }
@@ -65,29 +65,31 @@ li {
 
 .sidebar-links {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 4rem;
-  & svg {
+
+  svg {
     height: 2rem;
   }
-  & span {
+  
+  span {
     font-size: 1.25rem;
     font-weight: 600;
   }
-  & .sidebar-icon {
+  .sidebar-icon {
     height: 1.5rem;
   }
 }
 
 .sidebar-links ul {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.5rem;
 }
 
 .sidebar-links li {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
   gap: 1rem;
 }
 
