@@ -13,7 +13,7 @@ body {
 
 .container {
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
   display: grid;
   grid-template-columns: [sidebar-start] 1fr [sidebar-end header-start main-start] 4fr [header-end main-end];
   grid-template-rows: [sidebar-start header-start] 1fr [header-end main-start] 5fr [sidebar-end main-end];
@@ -91,6 +91,17 @@ li {
   grid-auto-flow: column;
   justify-content: start;
   gap: 1rem;
+}
+
+.header {
+  padding: 1rem 3rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+
+  svg {
+    height: 1.5rem;
+  }
 }
 
 .main {
