@@ -94,14 +94,39 @@ li {
 }
 
 .header {
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
+  align-items: center;
 
   svg {
     height: 1.5rem;
   }
+}
+
+.header-search {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+
+  > svg {
+    margin-top: 2px;
+  }
+}
+
+input {
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 1rem;
+  height: 1.75rem;
+  font-size: 1rem;
+  padding: 1px 0.75rem;
+}
+
+input:focus,
+input:active {
+  outline: none;
 }
 
 .main {
