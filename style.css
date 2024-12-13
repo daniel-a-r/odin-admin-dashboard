@@ -30,13 +30,14 @@ body {
   align-content: start;
   gap: 2rem;
 
-  .sidebar-icon {
-    fill: #fff;
-  }
-
   span {
     color: #fff;
   }
+}
+
+.sidebar-icon {
+  fill: #fff;
+  height: 1.5rem;
 }
 
 .sidebar-title {
@@ -67,17 +68,10 @@ li {
   padding: 1rem;
   display: grid;
   gap: 4rem;
-
-  svg {
-    height: 2rem;
-  }
   
   span {
     font-size: 1.25rem;
     font-weight: 600;
-  }
-  .sidebar-icon {
-    height: 1.5rem;
   }
 }
 
@@ -109,10 +103,7 @@ li {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
-
-  > svg {
-    margin-top: 2px;
-  }
+  align-items: center;
 }
 
 input {
@@ -122,11 +113,11 @@ input {
   height: 1.75rem;
   font-size: 1rem;
   padding: 1px 0.75rem;
-}
 
-input:focus,
-input:active {
-  outline: none;
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 
 .main {
