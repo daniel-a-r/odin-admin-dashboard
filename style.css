@@ -16,7 +16,7 @@ body {
   width: 100vw;
   display: grid;
   grid-template-columns: [sidebar-start] 1fr [sidebar-end header-start main-start] 4fr [header-end main-end];
-  grid-template-rows: [sidebar-start header-start] 1fr [header-end main-start] 5fr [sidebar-end main-end];
+  grid-template-rows: [sidebar-start header-start] 150px [header-end main-start] 1fr [sidebar-end main-end];
   grid-template-areas: 
     "sidebar header"
     "sidebar main";
@@ -29,6 +29,7 @@ body {
   display: grid;
   align-content: start;
   gap: 2rem;
+  z-index: 2;
 
   span {
     color: #fff;
@@ -90,13 +91,15 @@ li {
 .header {
   padding: 0 3rem;
   padding-bottom: 0.75rem;
+  background-color: #ffffff;
+  grid-area: header;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   column-gap: 2rem;
-  /* row-gap: 0.5rem; */
-  box-shadow: 2rem 1rem 1rem;
+  box-shadow: 0px 2px 4px rgb(192, 192, 192);
+  z-index: 1;
 
   svg {
     height: 1.25rem;
@@ -189,5 +192,79 @@ button {
 }
 
 .main {
+  padding: 2rem 1rem;
+  grid-area: main;
   background-color: #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr 225px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    'projects announcements'
+    'projects trending';
+  gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgb(192, 192, 192);
+}
+
+.projects {
+  grid-area: projects;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 0.5rem;
+}
+
+.projects-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+
+  .card {
+    padding: 1.5rem 1rem;
+    min-height: 150px;
+    border-radius: 0.5rem;
+    border-left: 0.5rem solid #f0b429;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr max-content max-content max-content;
+    grid-template-areas: 
+      'title title title title'
+      'desc  desc  desc  desc'
+      '...   star  watch share';
+    column-gap: 1.25rem;
+  }
+
+  svg {
+    height: 1.25rem;
+  }
+}
+
+.project-title {
+  grid-area: title;
+}
+
+.project-desc {
+  grid-area: desc;
+}
+
+.star {
+  grid-area: star;
+}
+
+.watch {
+  grid-area: watch;
+}
+
+.share {
+  grid-area: share;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
 }
